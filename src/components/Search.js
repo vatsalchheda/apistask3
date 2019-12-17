@@ -69,7 +69,7 @@ class Search extends Component {
                 onChange={Searchhandler}
               ></input>
               <button
-                className="btn btn-outline-light my-2 my-sm-0"
+                className="btn btn-outline-dark my-2 my-sm-0"
                 type="submit"
                 onClick={this.showData}
               >
@@ -82,13 +82,16 @@ class Search extends Component {
         <br></br>
         <br></br>
         <div className="Profilecard">
-          <h1>Search Page</h1>
           <h2>{this.state.name}</h2>
-          <img className="imgsize" src={this.state.avatar}></img>
-          <p>Username: {this.state.username}</p>
-          <p>{this.state.Followers} Followers</p>
-          <p>{this.state.Following} Following</p>
-          <p>{this.state.reps} Repos</p>
+          <img
+            className="imgsize"
+            style={{ width: "350px" }}
+            src={this.state.avatar}
+          ></img>
+          <h4>Username: {this.state.username}</h4>
+          <h4>{this.state.Followers} Followers</h4>
+          <h4>{this.state.Following} Following</h4>
+          <h4>{this.state.reps} Repos</h4>
         </div>
       </div>
     );

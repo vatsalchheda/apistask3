@@ -76,7 +76,7 @@ class Compare extends Component {
     const api_call = await fetch(url);
     data1 = await api_call.json();
     console.log(data1);
-    this.setdata1(data1);
+    this.setData1(data1);
     return { data1 };
   };
   fetchUsers2 = async user => {
@@ -89,7 +89,7 @@ class Compare extends Component {
     const api_call = await fetch(url);
     data2 = await api_call.json();
     console.log(data2);
-    this.setdata2(data2);
+    this.setData2(data2);
     return { data2 };
   };
 
@@ -99,30 +99,29 @@ class Compare extends Component {
         <div className="border-bottom">
           <nav className="navbar navbar-dark bg-black row">
             <div className="container">
-              <a className="navbar-brand col-sm-1">Github</a>
               <input
-                className="form-control mr-sm-2 col-sm-6 "
+                className="form-control mr-sm-2 col-sm-3 "
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
                 onChange={Searchhandler1}
               ></input>
               <button
-                className="btn btn-outline-light my-2 my-sm-0"
+                className="btn btn-outline-primary my-2 my-sm-0"
                 type="submit"
                 onClick={this.showData1}
               >
                 Search
               </button>
               <input
-                className="form-control mr-sm-2 col-sm-6 "
+                className="form-control mr-sm-2 col-sm-3 "
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
                 onChange={Searchhandler2}
               ></input>
               <button
-                className="btn btn-outline-light my-2 my-sm-0"
+                className="btn btn-outline-primary my-2 my-sm-0"
                 type="submit"
                 onClick={this.showData2}
               >
@@ -134,23 +133,35 @@ class Compare extends Component {
         <br></br>
         <br></br>
         <br></br>
-        <div className="Profilecard">
-          <h1>Compare Page</h1>
-          <h2>{this.state.name1}</h2>
-          <img className="imgsize" src={this.state.avatar1}></img>
-          <p>Username: {this.state.username1}</p>
-          <p>{this.state.Followers1} Followers</p>
-          <p>{this.state.Following1} Following</p>
-          <p>{this.state.reps1} Repos</p>
-        </div>
-        <div className="Profilecard">
-          <h1>Compare Page</h1>
-          <h2>{this.state.name2}</h2>
-          <img className="imgsize" src={this.state.avatar2}></img>
-          <p>Username: {this.state.username2}</p>
-          <p>{this.state.Followers2} Followers</p>
-          <p>{this.state.Following2} Following</p>
-          <p>{this.state.reps2} Repos</p>
+        <div className="ParentCardholder">
+          <div className="Profilecard border ">
+            <h2>{this.state.name1}</h2>
+            <img
+              className="imgsize"
+              style={{ width: "350px" }}
+              src={this.state.avatar1}
+            ></img>
+            <br></br>
+            <br></br>
+            <p>Username: {this.state.username1}</p>
+            <p>{this.state.Followers1} Followers</p>
+            <p>{this.state.Following1} Following</p>
+            <p>{this.state.reps1} Repos</p>
+          </div>
+          <div className="Profilecard border">
+            <h2>{this.state.name2}</h2>
+            <img
+              className="imgsize"
+              style={{ width: "350px" }}
+              src={this.state.avatar2}
+            ></img>
+            <br></br>
+            <br></br>
+            <p>Username: {this.state.username2}</p>
+            <p>{this.state.Followers2} Followers</p>
+            <p>{this.state.Following2} Following</p>
+            <p>{this.state.reps2} Repos</p>
+          </div>
         </div>
       </div>
     );
