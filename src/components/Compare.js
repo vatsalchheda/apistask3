@@ -3,6 +3,7 @@ import React, { Component, useEffect } from "react";
 var UserInput1, UserInput2;
 var obj;
 var data1, data2;
+const apikey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const Searchhandler1 = e => {
   UserInput1 = e.target.value;
@@ -71,7 +72,9 @@ class Compare extends Component {
     const url =
       "https://api.github.com/users/" +
       user +
-      "?client_id=Iv1.ce69d2971809f815&client_secret=a6264ef0925ebe6830f6b4b74226838a7c4d219b";
+      "?client_id=" +
+      apikey +
+      "&client_secret=a6264ef0925ebe6830f6b4b74226838a7c4d219b";
     console.log(url);
     const api_call = await fetch(url);
     data1 = await api_call.json();
@@ -84,7 +87,9 @@ class Compare extends Component {
     const url =
       "https://api.github.com/users/" +
       user +
-      "?client_id=Iv1.ce69d2971809f815&client_secret=a6264ef0925ebe6830f6b4b74226838a7c4d219b";
+      "?client_id=" +
+      apikey +
+      "&client_secret=a6264ef0925ebe6830f6b4b74226838a7c4d219b";
     console.log(url);
     const api_call = await fetch(url);
     data2 = await api_call.json();
